@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tres en Raya - Games Hub</title>
+      <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css" />
+  </head>
+  <body>
+      <!-- Barra de navegación con botones para los juegos -->
+    <header class="main-header">
+      <nav class="game-nav" role="navigation" aria-label="Selector de juegos">
+    <button class="game-btn active" data-game="tres-en-raya">Tres en Raya</button>
+    <button class="game-btn" data-game="piedra-papel-tijera">Piedra, Papel o Tijera</button>
+    <button class="game-btn" data-game="memoria">Memoria</button>
+  </nav>
+    </header>
+
+    
+    <!-- Tres en Raya  -->
+<button id="volver-btn" aria-label="Volver al menú" onclick="window.location.href='/'">⬅️</button>
+
+
+    <section id="tres-en-raya" class="game-section" role="region" aria-label="Juego Tres en Raya">
+      
+      <h2 class="titulo-especial">Tres en Raya</h2>
+      <div id="board" class="board" role="grid" aria-label="Tablero de juego">
+        <!-- 9 celdas generadas con JavaScript -->
+      </div>
+      <div id="game-info" class="game-info" aria-live="polite" aria-atomic="true">
+        <p id="turn-info">Turno de: X</p>
+        <p id="score-info">Puntuación - X: 0 | O: 0</p>
+      </div>
+      <button id="restart-btn" aria-label="Reiniciar juego">Reiniciar juego</button>
+    </section>
+
+      <!-- Piedra, Papel o Tijera -->
+<section id="piedra-papel-tijera" class="game-section" role="region" aria-label="Juego Piedra, Papel o Tijera" hidden>
+  <h2 class="titulo-especial">Piedra, Papel o Tijera</h2>
+  
+  <div class="choices">
+    <button data-choice="piedra" aria-label="Piedra">✊</button>
+    <button data-choice="papel" aria-label="Papel">✋</button>
+    <button data-choice="tijera" aria-label="Tijera">✌️</button>
+  </div>
+
+  <div id="resultado" aria-live="polite" aria-atomic="true" class="game-info">
+    <p id="resultado-text">Haz tu elección</p>
+    <p id="score-ppt">Puntuación - Jugador: 0 | Sofia: 0</p>
+  </div>
+
+  <button id="restart-ppt-btn" aria-label="Reiniciar juego Piedra Papel o Tijera">Reiniciar juego</button>
+</section>
+
+
+  <!-- Memoria -->
+<section id="memoria" class="game-section" hidden>
+  <h2 class="titulo-especial">Juego de Memoria</h2>
+  <div id="memoria-board" class="memoria-board" role="grid" aria-label="Tablero de memoria">
+ <div class="color-btn verde" id="verde" data-color="verde" aria-label="Verde"></div>
+  <div class="color-btn rojo" id="rojo" data-color="rojo" aria-label="Rojo"></div>
+  <div class="color-btn amarillo" id="amarillo" data-color="amarillo" aria-label="Amarillo"></div>
+  <div class="color-btn azul" id="azul" data-color="azul" aria-label="Azul"></div>
+  <div class="color-btn extra morado" id="morado" data-color="morado" aria-label="Morado" hidden></div>
+  <div class="color-btn extra rosa" id="rosa" data-color="rosa" aria-label="Rosa" hidden></div>
+  <div class="color-btn extra naranja" id="naranja" data-color="naranja" aria-label="Naranja" hidden></div>
+  <div class="color-btn extra celeste" id="celeste" data-color="celeste" aria-label="Celeste" hidden></div>
+</div>
+
+  </div>
+  <p id="nivel-info">Nivel: 1</p>
+
+<div class="dificultad-controles">
+  <label for="dificultad" class="dificultad-label">Dificultad:</label>
+<select id="dificultad">
+  <option value="facil">Fácil</option>
+  <option value="dificil">Difícil</option>
+</select>
+  <button id="start-memoria">Iniciar Juego</button>
+</div>
+</section>
+
+
+    <!-- Vinculamos el JS -->
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
